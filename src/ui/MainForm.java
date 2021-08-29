@@ -5,15 +5,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ContactForm extends JFrame {
+public class MainForm extends JFrame {
     private JPanel rootPainel;
-    private JPanel panel1;
-    private JTextField textNome;
-    private JTextField textTelefone;
-    private JButton buttonSalvar;
-    private JButton buttonCancelar;
+    private JButton buttonNovoContato;
+    private JButton buttonRemoverContato;
+    private JTable tabelaDeContatos;
 
-    public  ContactForm() {
+    public MainForm() {
         setContentPane(rootPainel);
         setSize(500,250);
         setVisible(true);
@@ -25,21 +23,19 @@ public class ContactForm extends JFrame {
         setListeners();
     }
 
-    private void setListeners(){
-        buttonCancelar.addActionListener(new ActionListener() {
+    private void setListeners() {
+        buttonNovoContato.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new MainForm();
+                new ContactForm();
                 dispose();
             }
         });
 
-        buttonSalvar.addActionListener(new ActionListener() {
+        buttonRemoverContato.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
             }
         });
     }
-
 }
