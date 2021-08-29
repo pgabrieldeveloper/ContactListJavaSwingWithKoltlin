@@ -31,5 +31,19 @@ class ContactBusiness {
         this.validarDelecaoDeContato(nome,telefone);
     }
 
+    fun getList (): List<ContactEntity>{
+        return ContatRepository.getList();
+    }
+
+
+    fun countContatsSize(): String {
+        val list = getList();
+        return when {
+            list.isEmpty() -> "0 Contatos";
+            list.size == 1 -> "1 Contato";
+            else -> "${list.size} Contatos";
+        }
+
+    }
 
 }

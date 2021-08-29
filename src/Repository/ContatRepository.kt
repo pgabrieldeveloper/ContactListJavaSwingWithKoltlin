@@ -14,7 +14,9 @@ class ContatRepository {
 
         }
 
-
+        fun getList (): List<ContactEntity>{
+            return contactList;
+        }
 
 
     }
