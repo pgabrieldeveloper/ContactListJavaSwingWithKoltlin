@@ -1,5 +1,7 @@
 package business
 
+import Entity.ContactEntity
+import Repository.ContatRepository
 import java.lang.Exception
 
 class ContactBusiness {
@@ -21,6 +23,8 @@ class ContactBusiness {
 
     fun adicionarUmContato(nome: String, telefone:String){
         this.validarAdicaoDeContato(nome, telefone);
+        val contato = ContactEntity(nome,telefone);
+        ContatRepository.save(contato);
     }
 
     fun deletarUmContato(nome: String, telefone:String){
